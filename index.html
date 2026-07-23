@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talha Jubaer — Applied Chemist</title>
+  <meta name="description" content="Talha Jubaer — Industrial & Applied Chemist. Formulation, process optimization, and materials research." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated molecular background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <canvas id="molecule-canvas" aria-hidden="true"></canvas>
+
+  <!-- Progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav-logo" aria-label="Home">
+      <!-- Atom symbol -->
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>
+        <ellipse cx="12" cy="12" rx="10" ry="4"/>
+        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
+        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
+      </svg>
+      <span>Talha Jubaer</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow reveal">
+          <span class="status-dot"></span> Open to opportunities
+        </p>
+        <h1 class="hero-title reveal">
+          <span class="line">Building better</span>
+          <span class="line accent">compounds &amp; processes.</span>
+        </h1>
+        <p class="hero-sub reveal">
+          I'm <strong>Talha Jubaer</strong> — an industrial &amp; applied chemist specializing in
+          formulation, process optimization, and turning lab-scale research into
+          products that scale.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-primary">
+            View work
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+
+        <!-- floating molecule accent -->
+        <div class="hero-molecule reveal" aria-hidden="true">
+          <svg viewBox="0 0 200 160" width="100%" height="100%">
+            <g class="mol-spin">
+              <line x1="100" y1="80" x2="40" y2="40" />
+              <line x1="100" y1="80" x2="160" y2="40" />
+              <line x1="100" y1="80" x2="70" y2="140" />
+              <line x1="100" y1="80" x2="130" y2="140" />
+              <line x1="40" y1="40" x2="160" y2="40" />
+              <circle cx="100" cy="80" r="12" class="mol-node center" />
+              <circle cx="40" cy="40" r="8" class="mol-node" />
+              <circle cx="160" cy="40" r="8" class="mol-node" />
+              <circle cx="70" cy="140" r="8" class="mol-node" />
+              <circle cx="130" cy="140" r="8" class="mol-node" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <span>Scroll</span>
+        <span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-head reveal">
+        <span class="section-tag">01 / About</span>
+        <h2 class="section-title">From bench to production.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I work at the intersection of <em>chemistry and engineering</em> —
+            translating reactions that work in a flask into robust, repeatable
+            processes that run at industrial scale.
+          </p>
+          <p>
+            My focus areas include formulation chemistry, process optimization,
+            and quality control. I care about reproducibility, safety, and data:
+            every decision I make is backed by measurement.
+          </p>
+          <p>
+            Outside the lab, I care about making science legible — clear
+            documentation, clean data, and processes anyone on the team can follow.
+          </p>
+        </div>
+        <aside class="about-stats reveal">
+          <div class="stat">
+            <span class="stat-num" data-count="6">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Years in industry</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="40">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Formulations developed</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="3">0</span>
+            <span class="stat-label">Patents / disclosures</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="section-head reveal">
+        <span class="section-tag">02 / Skills</span>
+        <h2 class="section-title">Toolkit &amp; techniques.</h2>
+      </div>
+      <div class="skills-grid">
+        <!-- element-tile styled skills -->
+        <article class="skill-tile reveal" style="--tile-num:01"><span class="tile-symbol">Fo</span><span class="tile-name">Formulation</span></article>
+        <article class="skill-tile reveal" style="--tile-num:02"><span class="tile-symbol">Pc</span><span class="tile-name">Process Control</span></article>
+        <article class="skill-tile reveal" style="--tile-num:03"><span class="tile-symbol">Qa</span><span class="tile-name">QC / Analytical</span></article>
+        <article class="skill-tile reveal" style="--tile-num:04"><span class="tile-symbol">Sp</span><span class="tile-name">Spectroscopy</span></article>
+        <article class="skill-tile reveal" style="--tile-num:05"><span class="tile-symbol">Ch</span><span class="tile-name">Chromatography</span></article>
+        <article class="skill-tile reveal" style="--tile-num:06"><span class="tile-symbol">Da</span><span class="tile-name">Data Analysis</span></article>
+        <article class="skill-tile reveal" style="--tile-num:07"><span class="tile-symbol">Sc</span><span class="tile-name">Scale-up</span></article>
+        <article class="skill-tile reveal" style="--tile-num:08"><span class="tile-symbol">Sd</span><span class="tile-name">Six Sigma</span></article>
+        <article class="skill-tile reveal" style="--tile-num:09"><span class="tile-symbol">Gx</span><span class="tile-name">GMP / GLP</span></article>
+        <article class="skill-tile reveal" style="--tile-num:10"><span class="tile-symbol">Py</span><span class="tile-name">Python</span></article>
+        <article class="skill-tile reveal" style="--tile-num:11"><span class="tile-symbol">Do</span><span class="tile-name">DOE</span></article>
+        <article class="skill-tile reveal" style="--tile-num:12"><span class="tile-symbol">Rt</span><span class="tile-name">Rheology</span></article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section-head reveal">
+        <span class="section-tag">03 / Projects</span>
+        <h2 class="section-title">Selected work.</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-mol" aria-hidden="true">
+            <svg viewBox="0 0 120 80" width="100%" height="100%">
+              <line x1="30" y1="40" x2="60" y2="20" /><line x1="60" y1="20" x2="90" y2="40" /><line x1="30" y1="40" x2="60" y2="60" /><line x1="60" y1="60" x2="90" y2="40" />
+              <circle cx="30" cy="40" r="7" class="mol-node"/><circle cx="60" cy="20" r="7" class="mol-node center"/><circle cx="90" cy="40" r="7" class="mol-node"/><circle cx="60" cy="60" r="7" class="mol-node"/>
+            </svg>
+          </div>
+          <span class="project-cat">Formulation</span>
+          <h3>Waterborne coating platform</h3>
+          <p>Reformulated an industrial coating to cut VOC content by 60% while matching gloss and adhesion specs — moved from lab to 2,000 L pilot in 8 weeks.</p>
+          <div class="project-meta">
+            <span>VOC −60%</span><span>Scale 2000L</span><span>8 wk</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-mol" aria-hidden="true">
+            <svg viewBox="0 0 120 80" width="100%" height="100%">
+              <line x1="20" y1="55" x2="50" y2="40" /><line x1="50" y1="40" x2="80" y2="55" /><line x1="80" y1="55" x2="100" y2="30" />
+              <circle cx="20" cy="55" r="7" class="mol-node"/><circle cx="50" cy="40" r="7" class="mol-node"/><circle cx="80" cy="55" r="7" class="mol-node center"/><circle cx="100" cy="30" r="7" class="mol-node"/>
+            </svg>
+          </div>
+          <span class="project-cat">Process</span>
+          <h3>Yield optimization study</h3>
+          <p>Used a Design of Experiments (DOE) approach on a low-yield synthesis — identified key interaction effects and lifted average yield from 71% to 89%.</p>
+          <div class="project-meta">
+            <span>Yield +18pt</span><span>DOE</span><span>2 mo</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-mol" aria-hidden="true">
+            <svg viewBox="0 0 120 80" width="100%" height="100%">
+              <line x1="40" y1="20" x2="60" y2="40" /><line x1="60" y1="40" x2="40" y2="60" /><line x1="60" y1="40" x2="85" y2="40" /><line x1="85" y1="40" x2="100" y2="22" /><line x1="85" y1="40" x2="100" y2="58" />
+              <circle cx="40" cy="20" r="7" class="mol-node"/><circle cx="60" cy="40" r="7" class="mol-node center"/><circle cx="40" cy="60" r="7" class="mol-node"/><circle cx="85" cy="40" r="7" class="mol-node"/><circle cx="100" cy="22" r="6" class="mol-node"/><circle cx="100" cy="58" r="6" class="mol-node"/>
+            </svg>
+          </div>
+          <span class="project-cat">Analytics</span>
+          <h3>QC data dashboard</h3>
+          <p>Built a Python pipeline pulling HPLC + spectroscopy data into a live dashboard, flagging out-of-spec batches automatically and cutting review time by 75%.</p>
+          <div class="project-meta">
+            <span>Review −75%</span><span>Python</span><span>HPLC</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-head reveal">
+        <span class="section-tag">04 / Contact</span>
+        <h2 class="section-title">Let's build something.</h2>
+      </div>
+      <div class="contact-inner reveal">
+        <p class="contact-lead">
+          Have a formulation challenge, a process to optimize, or just want to talk shop?
+          I'm always open to a good conversation.
+        </p>
+
+        <div class="contact-info">
+          <a href="mailto:talhajubaer20@gmail.com" class="contact-item">
+            <span class="contact-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">talhajubaer20@gmail.com</span>
+          </a>
+
+          <a href="tel:+8801904714959" class="contact-item">
+            <span class="contact-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l1 4v2a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            </span>
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+880 1904 714959</span>
+          </a>
+
+          <div class="contact-item">
+            <span class="contact-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <span class="contact-label">Location</span>
+            <span class="contact-value">Gazipur, Bangladesh</span>
+          </div>
+        </div>
+
+        <a href="mailto:talhajubaer20@gmail.com" class="contact-email">
+          talhajubaer20@gmail.com
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/talha-jubaer-7434a6369/" target="_blank" rel="noopener" class="contact-link">LinkedIn ↗</a>
+          <a href="mailto:talhajubaer20@gmail.com" class="contact-link">Email</a>
+          <a href="tel:+8801904714959" class="contact-link">Call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Talha Jubaer · Designed &amp; built with care.</p>
+    <p class="footer-tag">C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub> · fueled by caffeine</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
