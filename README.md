@@ -40,14 +40,7 @@ python3 -m http.server 8000
 # visit http://localhost:8000
 ```
 
-## Deploy
-
-This site uses GitHub Pages with **"Deploy from a branch"** (no build step). Setup:
-
-1. Repo **Settings → Pages → Build and deployment → Source:** `Deploy from a branch`
-2. **Branch:** `main` / `(root)` → Save
-
-Every push to `main` is published automatically. Live at **[tjt43.github.io](https://tjt43.github.io)**.
+Deployed via GitHub Pages using the **Deploy from a branch** option.
 
 ---
 
