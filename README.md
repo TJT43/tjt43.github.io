@@ -1,6 +1,6 @@
 # Talha Jubaer — Applied Chemist Portfolio
 
-A dark, minimal, animated single-page portfolio with a chemistry theme — molecular canvas background, periodic-table-style skill tiles, and SVG molecule accents.
+A dark, minimal, animated single-page portfolio with a chemistry theme — molecular canvas background, periodic-table-style skill tiles, and SVG molecule accents. Deployed via GitHub Pages using "Deploy from a branch" (`main`).
 
 🔗 **Live site:** [tjt43.github.io](https://tjt43.github.io)
 
@@ -42,7 +42,12 @@ python3 -m http.server 8000
 
 ## Deploy
 
-Deploys automatically to GitHub Pages via `.github/workflows/deploy.yml` on every push to `main`.
+This site uses GitHub Pages with **"Deploy from a branch"** (no build step). Setup:
+
+1. Repo **Settings → Pages → Build and deployment → Source:** `Deploy from a branch`
+2. **Branch:** `main` / `(root)` → Save
+
+Every push to `main` is published automatically. Live at **[tjt43.github.io](https://tjt43.github.io)**.
 
 ---
 
