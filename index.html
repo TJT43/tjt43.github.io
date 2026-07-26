@@ -7,7 +7,7 @@
   <meta name="description" content="Talha Jubaer — Industrial & Applied Chemist. Formulation, process optimization, and materials research." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&family=Shadows+Into+Light&family=Pacifico&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -32,8 +32,9 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#about">About</a>
+      <a href="#education">Education</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Experience</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -59,7 +60,7 @@
         </p>
         <div class="hero-actions reveal">
           <a href="#projects" class="btn btn-primary">
-            View work
+            View Experience
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a href="#contact" class="btn btn-ghost">Get in touch</a>
@@ -68,17 +69,55 @@
         <!-- floating molecule accent -->
         <div class="hero-molecule reveal" aria-hidden="true">
           <svg viewBox="0 0 200 160" width="100%" height="100%">
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.6" />
+                <stop offset="100%" style="stop-color:var(--accent-soft);stop-opacity:0.4" />
+              </linearGradient>
+              <radialGradient id="nodeGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" style="stop-color:var(--accent-soft);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:var(--accent);stop-opacity:0.9" />
+              </radialGradient>
+            </defs>
             <g class="mol-spin">
-              <line x1="100" y1="80" x2="40" y2="40" />
-              <line x1="100" y1="80" x2="160" y2="40" />
-              <line x1="100" y1="80" x2="70" y2="140" />
-              <line x1="100" y1="80" x2="130" y2="140" />
-              <line x1="40" y1="40" x2="160" y2="40" />
-              <circle cx="100" cy="80" r="12" class="mol-node center" />
-              <circle cx="40" cy="40" r="8" class="mol-node" />
-              <circle cx="160" cy="40" r="8" class="mol-node" />
-              <circle cx="70" cy="140" r="8" class="mol-node" />
-              <circle cx="130" cy="140" r="8" class="mol-node" />
+              <!-- Bonds/Lines with gradient -->
+              <line x1="100" y1="80" x2="40" y2="40" stroke="url(#lineGrad)" stroke-width="2.5" class="mol-bond"/>
+              <line x1="100" y1="80" x2="160" y2="40" stroke="url(#lineGrad)" stroke-width="2.5" class="mol-bond"/>
+              <line x1="100" y1="80" x2="70" y2="140" stroke="url(#lineGrad)" stroke-width="2.5" class="mol-bond"/>
+              <line x1="100" y1="80" x2="130" y2="140" stroke="url(#lineGrad)" stroke-width="2.5" class="mol-bond"/>
+              <line x1="40" y1="40" x2="160" y2="40" stroke="url(#lineGrad)" stroke-width="2" opacity="0.4" class="mol-bond"/>
+              
+              <!-- Nodes/Atoms with enhanced styling -->
+              <g filter="url(#glow)">
+                <circle cx="100" cy="80" r="16" class="mol-node center" fill="url(#nodeGrad)"/>
+                <circle cx="100" cy="80" r="10" fill="var(--accent-soft)" opacity="0.6"/>
+                <circle cx="100" cy="80" r="5" fill="#fff" opacity="0.8"/>
+              </g>
+              
+              <circle cx="40" cy="40" r="10" class="mol-node" fill="url(#nodeGrad)" filter="url(#glow)"/>
+              <circle cx="40" cy="40" r="4" fill="#fff" opacity="0.7"/>
+              
+              <circle cx="160" cy="40" r="10" class="mol-node" fill="url(#nodeGrad)" filter="url(#glow)"/>
+              <circle cx="160" cy="40" r="4" fill="#fff" opacity="0.7"/>
+              
+              <circle cx="70" cy="140" r="10" class="mol-node" fill="url(#nodeGrad)" filter="url(#glow)"/>
+              <circle cx="70" cy="140" r="4" fill="#fff" opacity="0.7"/>
+              
+              <circle cx="130" cy="140" r="10" class="mol-node" fill="url(#nodeGrad)" filter="url(#glow)"/>
+              <circle cx="130" cy="140" r="4" fill="#fff" opacity="0.7"/>
+            </g>
+            
+            <!-- Orbital rings -->
+            <g class="mol-orbits">
+              <ellipse cx="100" cy="80" rx="70" ry="50" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.15" class="orbit-ring"/>
+              <ellipse cx="100" cy="80" rx="90" ry="65" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.1" class="orbit-ring"/>
             </g>
           </svg>
         </div>
@@ -94,70 +133,199 @@
     <section class="section" id="about">
       <div class="section-head reveal">
         <span class="section-tag">01 / About</span>
-        <h2 class="section-title">From bench to production.</h2>
+        <h2 class="section-title">Learning & building foundations.</h2>
       </div>
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p>
-            I work at the intersection of <em>chemistry and engineering</em> —
-            translating reactions that work in a flask into robust, repeatable
-            processes that run at industrial scale.
-          </p>
-          <p>
-            My focus areas include formulation chemistry, process optimization,
-            and quality control. I care about reproducibility, safety, and data:
-            every decision I make is backed by measurement.
-          </p>
-          <p>
-            Outside the lab, I care about making science legible — clear
-            documentation, clean data, and processes anyone on the team can follow.
-          </p>
+      <div class="about-container">
+        <div class="about-main reveal">
+          <div class="about-intro-card">
+            <div class="intro-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+              </svg>
+            </div>
+            <div class="intro-content">
+              <h3>Chemistry Undergraduate</h3>
+              <p>National University, Gazipur, Bangladesh</p>
+              <div class="intro-badge">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>RSC Student Member</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text">
+            <div class="text-block reveal">
+              <div class="block-number">01</div>
+              <p>
+                I'm diving deep into physical, industrial, and analytical chemistry at National University. 
+                Being a student member of the Royal Society of Chemistry (RSC) keeps me connected 
+                to a global community of chemists and pushes me to think beyond textbooks.
+              </p>
+            </div>
+
+            <div class="text-block reveal">
+              <div class="block-number">02</div>
+              <p>
+                What excites me most is seeing chemistry come alive in the real world. I love 
+                exploring how reactions that work beautifully in a lab flask can transform into 
+                reliable processes that actually scale up for industry. There's something magical 
+                about bridging that gap between theory and practice.
+              </p>
+            </div>
+
+            <div class="text-block reveal">
+              <div class="block-number">03</div>
+              <p>
+                My curiosity gravitates toward formulation chemistry, process optimization, and 
+                quality control. I believe good science isn't just about getting results—it's 
+                about making them reproducible and safe. Every experiment I run, every decision 
+                I make starts with solid data and careful measurement.
+              </p>
+            </div>
+
+            <div class="text-block reveal">
+              <div class="block-number">04</div>
+              <p>
+                At my core, I'm a problem solver who loves combining the precision of analytical 
+                chemistry with practical, hands-on solutions. I'm always eager to learn something 
+                new, tackle challenging projects, and grow both as a scientist and as someone who 
+                wants to make a real impact in the field.
+              </p>
+            </div>
+          </div>
         </div>
-        <aside class="about-stats reveal">
-          <div class="stat">
-            <span class="stat-num" data-count="6">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Years in industry</span>
+
+        <aside class="about-sidebar reveal">
+          <div class="focus-areas-card">
+            <h4 class="sidebar-title">Focus Areas</h4>
+            <div class="focus-list">
+              <div class="focus-item">
+                <div class="focus-icon">⚗️</div>
+                <div class="focus-details">
+                  <span class="focus-name">Physical Chemistry</span>
+                  <span class="focus-desc">Thermodynamics & kinetics</span>
+                </div>
+              </div>
+              <div class="focus-item">
+                <div class="focus-icon">🏭</div>
+                <div class="focus-details">
+                  <span class="focus-name">Industrial Chemistry</span>
+                  <span class="focus-desc">Process optimization</span>
+                </div>
+              </div>
+              <div class="focus-item">
+                <div class="focus-icon">🔬</div>
+                <div class="focus-details">
+                  <span class="focus-name">Analytical Chemistry</span>
+                  <span class="focus-desc">Quality control & analysis</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="stat">
-            <span class="stat-num" data-count="40">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Formulations developed</span>
+
+          <div class="interests-card">
+            <h4 class="sidebar-title">Research Interests</h4>
+            <div class="interest-tags">
+              <span class="interest-tag">Formulation</span>
+              <span class="interest-tag">Process Scale-Up</span>
+              <span class="interest-tag">Quality Control</span>
+              <span class="interest-tag">Data Analysis</span>
+              <span class="interest-tag">Lab Safety</span>
+              <span class="interest-tag">Reproducibility</span>
+            </div>
           </div>
-          <div class="stat">
-            <span class="stat-num" data-count="3">0</span>
-            <span class="stat-label">Patents / disclosures</span>
+
+          <div class="quote-card">
+            <svg class="quote-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+            </svg>
+            <p class="quote-text">Good science isn't just about getting results—it's about making them reproducible and safe.</p>
           </div>
         </aside>
+      </div>
+    </section>
+    <section class="section" id="education">
+      <div class="section-head reveal">
+        <span class="section-tag">02 / Education</span>
+        <h2 class="section-title">Academic journey.</h2>
+      </div>
+      <div class="education-timeline">
+        <article class="edu-card reveal">
+          <div class="edu-year">2024 — Present</div>
+          <div class="edu-content">
+            <div class="edu-header">
+              <h3>B.Sc. in Chemistry</h3>
+              <span class="edu-status">Currently Second Year</span>
+            </div>
+            <p class="edu-institution">Bhawal Badre Alam Government College</p>
+            <div class="edu-details">
+              <span class="edu-tag">Physical Chemistry</span>
+              <span class="edu-tag">Industrial Chemistry</span>
+              <span class="edu-tag">Analytical Chemistry</span>
+            </div>
+          </div>
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+              <path d="M12 14l9-5v6"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="edu-card reveal">
+          <div class="edu-year">2020 — 2022</div>
+          <div class="edu-content">
+            <div class="edu-header">
+              <h3>Higher Secondary Certificate (HSC)</h3>
+              <span class="edu-status">Completed</span>
+            </div>
+            <p class="edu-institution">M.E.H Arif College</p>
+            <div class="edu-details">
+              <span class="edu-tag">Science</span>
+            </div>
+          </div>
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section class="section" id="skills">
       <div class="section-head reveal">
-        <span class="section-tag">02 / Skills</span>
+        <span class="section-tag">03 / Skills</span>
         <h2 class="section-title">Toolkit &amp; techniques.</h2>
       </div>
       <div class="skills-grid">
         <!-- element-tile styled skills -->
-        <article class="skill-tile reveal" style="--tile-num:01"><span class="tile-symbol">Fo</span><span class="tile-name">Formulation</span></article>
-        <article class="skill-tile reveal" style="--tile-num:02"><span class="tile-symbol">Pc</span><span class="tile-name">Process Control</span></article>
-        <article class="skill-tile reveal" style="--tile-num:03"><span class="tile-symbol">Qa</span><span class="tile-name">QC / Analytical</span></article>
-        <article class="skill-tile reveal" style="--tile-num:04"><span class="tile-symbol">Sp</span><span class="tile-name">Spectroscopy</span></article>
-        <article class="skill-tile reveal" style="--tile-num:05"><span class="tile-symbol">Ch</span><span class="tile-name">Chromatography</span></article>
+        <article class="skill-tile reveal" style="--tile-num:01"><span class="tile-symbol">Qa</span><span class="tile-name">QC / Analytical</span></article>
+        <article class="skill-tile reveal" style="--tile-num:02"><span class="tile-symbol">Sp</span><span class="tile-name">Spectroscopy</span></article>
+        <article class="skill-tile reveal" style="--tile-num:03"><span class="tile-symbol">Ch</span><span class="tile-name">Chromatography</span></article>
+        <article class="skill-tile reveal" style="--tile-num:04"><span class="tile-symbol">Py</span><span class="tile-name">Python</span></article>
+        <article class="skill-tile reveal" style="--tile-num:05"><span class="tile-symbol">Ml</span><span class="tile-name">MATLAB</span></article>
         <article class="skill-tile reveal" style="--tile-num:06"><span class="tile-symbol">Da</span><span class="tile-name">Data Analysis</span></article>
-        <article class="skill-tile reveal" style="--tile-num:07"><span class="tile-symbol">Sc</span><span class="tile-name">Scale-up</span></article>
-        <article class="skill-tile reveal" style="--tile-num:08"><span class="tile-symbol">Sd</span><span class="tile-name">Six Sigma</span></article>
-        <article class="skill-tile reveal" style="--tile-num:09"><span class="tile-symbol">Gx</span><span class="tile-name">GMP / GLP</span></article>
-        <article class="skill-tile reveal" style="--tile-num:10"><span class="tile-symbol">Py</span><span class="tile-name">Python</span></article>
-        <article class="skill-tile reveal" style="--tile-num:11"><span class="tile-symbol">Do</span><span class="tile-name">DOE</span></article>
-        <article class="skill-tile reveal" style="--tile-num:12"><span class="tile-symbol">Rt</span><span class="tile-name">Rheology</span></article>
+        <article class="skill-tile reveal" style="--tile-num:07"><span class="tile-symbol">Oc</span><span class="tile-name">Organic Chemistry</span></article>
+        <article class="skill-tile reveal" style="--tile-num:08"><span class="tile-symbol">Ic</span><span class="tile-name">Inorganic Chemistry</span></article>
+        <article class="skill-tile reveal" style="--tile-num:09"><span class="tile-symbol">Pc</span><span class="tile-name">Physical Chemistry</span></article>
+        <article class="skill-tile reveal" style="--tile-num:10"><span class="tile-symbol">Lt</span><span class="tile-name">Lab Techniques</span></article>
+        <article class="skill-tile reveal" style="--tile-num:11"><span class="tile-symbol">Ti</span><span class="tile-name">Titration</span></article>
+        <article class="skill-tile reveal" style="--tile-num:12"><span class="tile-symbol">Sy</span><span class="tile-name">Synthesis</span></article>
+        <article class="skill-tile reveal" style="--tile-num:13"><span class="tile-symbol">Pr</span><span class="tile-name">Problem Solving</span></article>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- EXPERIENCE -->
     <section class="section" id="projects">
       <div class="section-head reveal">
-        <span class="section-tag">03 / Projects</span>
-        <h2 class="section-title">Selected work.</h2>
+        <span class="section-tag">04 / Experience</span>
+        <h2 class="section-title">Teaching & volunteering.</h2>
       </div>
       <div class="projects-grid">
         <article class="project-card reveal">
@@ -167,11 +335,11 @@
               <circle cx="30" cy="40" r="7" class="mol-node"/><circle cx="60" cy="20" r="7" class="mol-node center"/><circle cx="90" cy="40" r="7" class="mol-node"/><circle cx="60" cy="60" r="7" class="mol-node"/>
             </svg>
           </div>
-          <span class="project-cat">Formulation</span>
-          <h3>Waterborne coating platform</h3>
-          <p>Reformulated an industrial coating to cut VOC content by 60% while matching gloss and adhesion specs — moved from lab to 2,000 L pilot in 8 weeks.</p>
+          <span class="project-cat">Teaching</span>
+          <h3>Part-Time Chemistry Teacher</h3>
+          <p>Taught core chemistry concepts and led laboratory demonstrations for students. Designed structured lesson plans and assessments while mentoring students on safe lab practices, precise measurements, and data recording.</p>
           <div class="project-meta">
-            <span>VOC −60%</span><span>Scale 2000L</span><span>8 wk</span>
+            <span>Konabari Model Public School</span><span>2023 – 2024</span><span>Part-time</span>
           </div>
         </article>
 
@@ -182,26 +350,11 @@
               <circle cx="20" cy="55" r="7" class="mol-node"/><circle cx="50" cy="40" r="7" class="mol-node"/><circle cx="80" cy="55" r="7" class="mol-node center"/><circle cx="100" cy="30" r="7" class="mol-node"/>
             </svg>
           </div>
-          <span class="project-cat">Process</span>
-          <h3>Yield optimization study</h3>
-          <p>Used a Design of Experiments (DOE) approach on a low-yield synthesis — identified key interaction effects and lifted average yield from 71% to 89%.</p>
+          <span class="project-cat">Volunteer</span>
+          <h3>Class Volunteer</h3>
+          <p>Facilitated hands-on chemistry and science activities for students. Guided learners through basic laboratory concepts, safety rules, and interactive experiments while assisting in managing classroom workflows for an engaging environment.</p>
           <div class="project-meta">
-            <span>Yield +18pt</span><span>DOE</span><span>2 mo</span>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-mol" aria-hidden="true">
-            <svg viewBox="0 0 120 80" width="100%" height="100%">
-              <line x1="40" y1="20" x2="60" y2="40" /><line x1="60" y1="40" x2="40" y2="60" /><line x1="60" y1="40" x2="85" y2="40" /><line x1="85" y1="40" x2="100" y2="22" /><line x1="85" y1="40" x2="100" y2="58" />
-              <circle cx="40" cy="20" r="7" class="mol-node"/><circle cx="60" cy="40" r="7" class="mol-node center"/><circle cx="40" cy="60" r="7" class="mol-node"/><circle cx="85" cy="40" r="7" class="mol-node"/><circle cx="100" cy="22" r="6" class="mol-node"/><circle cx="100" cy="58" r="6" class="mol-node"/>
-            </svg>
-          </div>
-          <span class="project-cat">Analytics</span>
-          <h3>QC data dashboard</h3>
-          <p>Built a Python pipeline pulling HPLC + spectroscopy data into a live dashboard, flagging out-of-spec batches automatically and cutting review time by 75%.</p>
-          <div class="project-meta">
-            <span>Review −75%</span><span>Python</span><span>HPLC</span>
+            <span>The Tech Lab</span><span>2023</span><span>Volunteer</span>
           </div>
         </article>
       </div>
@@ -210,49 +363,73 @@
     <!-- CONTACT -->
     <section class="section" id="contact">
       <div class="section-head reveal">
-        <span class="section-tag">04 / Contact</span>
+        <span class="section-tag">05 / Contact</span>
         <h2 class="section-title">Let's build something.</h2>
       </div>
       <div class="contact-inner reveal">
         <p class="contact-lead">
-          Have a formulation challenge, a process to optimize, or just want to talk shop?
-          I'm always open to a good conversation.
+          Interested in chemistry, research collaboration, or just want to connect?<br/>
+          I'm always open to learning opportunities and meaningful conversations.
         </p>
 
         <div class="contact-info">
-          <a href="mailto:talhajubaer20@gmail.com" class="contact-item">
-            <span class="contact-ic" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-            </span>
-            <span class="contact-label">Email</span>
-            <span class="contact-value">talhajubaer20@gmail.com</span>
-          </a>
+          <div class="contact-item contact-item-with-copy">
+            <a href="mailto:talhajubaer20@gmail.com" class="contact-item-link">
+              <span class="contact-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              </span>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">talhajubaer20@gmail.com</span>
+            </a>
+            <button class="copy-btn" onclick="copyToClipboard('talhajubaer20@gmail.com', this)" aria-label="Copy email">
+              <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              <svg class="check-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </button>
+          </div>
 
-          <a href="tel:+8801904714959" class="contact-item">
-            <span class="contact-ic" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l1 4v2a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
-            </span>
-            <span class="contact-label">Phone</span>
-            <span class="contact-value">+880 1904 714959</span>
-          </a>
+          <div class="contact-item contact-item-with-copy">
+            <a href="tel:+8801904714959" class="contact-item-link">
+              <span class="contact-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l1 4v2a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              </span>
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">+880 1904 714959</span>
+            </a>
+            <button class="copy-btn" onclick="copyToClipboard('+8801904714959', this)" aria-label="Copy phone number">
+              <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              <svg class="check-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </button>
+          </div>
 
-          <div class="contact-item">
+          <a href="https://www.google.com/maps/place/Gazipur,+Bangladesh" target="_blank" rel="noopener" class="contact-item">
             <span class="contact-ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
             </span>
             <span class="contact-label">Location</span>
             <span class="contact-value">Gazipur, Bangladesh</span>
-          </div>
-        </div>
+          </a>
 
-        <a href="mailto:talhajubaer20@gmail.com" class="contact-email">
-          talhajubaer20@gmail.com
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
-        </a>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/talha-jubaer-7434a6369/" target="_blank" rel="noopener" class="contact-link">LinkedIn ↗</a>
-          <a href="mailto:talhajubaer20@gmail.com" class="contact-link">Email</a>
-          <a href="tel:+8801904714959" class="contact-link">Call</a>
+          <a href="https://www.linkedin.com/in/talha-jubaer-7434a6369/" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </span>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">Talha Jubaer</span>
+          </a>
         </div>
       </div>
     </section>
@@ -264,5 +441,28 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Copy to clipboard function
+    function copyToClipboard(text, button) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Show success state
+        const copyIcon = button.querySelector('.copy-icon');
+        const checkIcon = button.querySelector('.check-icon');
+        
+        copyIcon.style.display = 'none';
+        checkIcon.style.display = 'block';
+        button.classList.add('copied');
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+          copyIcon.style.display = 'block';
+          checkIcon.style.display = 'none';
+          button.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+      });
+    }
+  </script>
 </body>
 </html>
